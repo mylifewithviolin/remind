@@ -1,5 +1,5 @@
-# remind
-remind is a multi language transcompiler to multi target language
+# Re:Mind
+Re:Mind is a multi language transcompiler to multi target language
 
 
 
