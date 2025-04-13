@@ -1,0 +1,20 @@
+□パッケージ HelloWorld
+    /**
+    * Program
+    */
+    ▽public クラス プログラム型
+        /**
+        * main
+        * @param 引数 args
+        */
+        ▽public static void メイン(string[] 引数)
+            □コンソール.一行表示する("Hello World!")
+        △
+    △
+
+■インポートする java.lang.System
+▼public class コンソール PrintStream System.out
+    ▼public static 一行表示する(string value)
+        ■println (String value)
+    ▲
+▲

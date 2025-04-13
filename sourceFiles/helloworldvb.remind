@@ -1,0 +1,21 @@
+▽名前空間 HelloWorld
+    /**
+    * Program
+    */
+    ▽モジュール プログラム型
+        /**
+        * Main
+        * @param 引数 args
+        */
+        ▽void メイン(string[] 引数)
+            □コンソール.一行表示する("Hello World!")
+        △
+    △
+△
+
+■インポートする System
+▼public static class コンソール Console
+    ▼public static 一行表示する(string? value)
+        ■WriteLine (string? value)
+    ▲
+▲
