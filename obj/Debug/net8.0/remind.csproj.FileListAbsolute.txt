@@ -1,0 +1,15 @@
+C:\developments\cs12\remind\bin\Debug\net8.0\remind.exe
+C:\developments\cs12\remind\bin\Debug\net8.0\remind.deps.json
+C:\developments\cs12\remind\bin\Debug\net8.0\remind.runtimeconfig.json
+C:\developments\cs12\remind\bin\Debug\net8.0\remind.dll
+C:\developments\cs12\remind\bin\Debug\net8.0\remind.pdb
+C:\developments\cs12\remind\obj\Debug\net8.0\remind.GeneratedMSBuildEditorConfig.editorconfig
+C:\developments\cs12\remind\obj\Debug\net8.0\remind.AssemblyInfoInputs.cache
+C:\developments\cs12\remind\obj\Debug\net8.0\remind.AssemblyInfo.cs
+C:\developments\cs12\remind\obj\Debug\net8.0\remind.csproj.CoreCompileInputs.cache
+C:\developments\cs12\remind\obj\Debug\net8.0\remind.sourcelink.json
+C:\developments\cs12\remind\obj\Debug\net8.0\remind.dll
+C:\developments\cs12\remind\obj\Debug\net8.0\refint\remind.dll
+C:\developments\cs12\remind\obj\Debug\net8.0\remind.pdb
+C:\developments\cs12\remind\obj\Debug\net8.0\remind.genruntimeconfig.cache
+C:\developments\cs12\remind\obj\Debug\net8.0\ref\remind.dll

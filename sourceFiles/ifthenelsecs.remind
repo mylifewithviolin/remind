@@ -1,0 +1,38 @@
+▽名前空間 HelloWorld
+    /**
+    * Program
+    */
+    ▽public クラス プログラム型
+    
+        /** 
+        * aisatsu1 
+        */
+        ・private static string? 挨拶１
+
+
+        /**
+        * Main
+        * @param 引数 args
+        */
+        ▽static void メイン(string[] 引数)
+            □挨拶１="Hello World one!"
+ 
+            □コンソール表示する(挨拶１)
+        △
+
+        /**
+        * ConsoleOut
+        * @param 引数2 dispStr
+        */
+        ▽static void コンソール表示する(string 引数2)
+            □コンソール.一行表示する(引数2)
+        △
+    △
+△
+
+■インポートする System
+▼public static class コンソール Console
+    ▼public static 一行表示する(string? value)
+        ■WriteLine (string? value)
+    ▲
+▲

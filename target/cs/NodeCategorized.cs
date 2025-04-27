@@ -16,7 +16,9 @@ public partial class TargetCs
                 sourceLines.sourceLineNumber=i+1;
                 sourceLines.lineStringsOrg=sourceLineString;
                 sourceLineString=sourceLineString.Trim();
-                sourceLines.indentOrg=sourceLines.lineStringsOrg.Substring(0,sourceLines.lineStringsOrg.Length-sourceLineString.Length);
+                var indentOrgLength =sourceLines.lineStringsOrg.Length-sourceLineString.Length;
+                indentOrgLength = indentOrgLength >0 ? indentOrgLength-1 : indentOrgLength;//2025/4/27 fix
+                sourceLines.indentOrg=sourceLines.lineStringsOrg.Substring(0,indentOrgLength);//2025/4/27 fix
                 sourceLines.nodeKind=JugdeSourceLineNode(ref sourceLineString);//ノード種類を処理する
                 if(sourceLines.nodeKind==NodeKind.ND_EXCEPTION){
                     Console.WriteLine(sourceLines.lineStringsOrg);                   

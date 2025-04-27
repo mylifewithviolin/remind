@@ -13,7 +13,7 @@ namespace remind
             /// <summary>Java</summary>
             public const string Java="java"; // Java
             /// <summary>C#</summary>
-            public const string CSharp="cs"; // C#
+            public const string CSharp="csp"; // C#
             /// <summary>VB.NET</summary>
             public const string VbNet="vb"; // VB.NET
             /// <summary>Mind /summary>

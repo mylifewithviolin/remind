@@ -1,0 +1,31 @@
+﻿using System;
+namespace HelloWorld
+{
+
+   /// <summary>プログラム型</summary>
+   public class Program
+   {
+
+        /// <summary>挨拶１</summary>
+       private static string? aisatsu1;
+       /// <summary>メイン</summary>
+       /// <param name=args>引数</param>
+       static void Main(string[] args)
+       {
+
+           aisatsu1="Hello World one!";
+           ConsoleOut(aisatsu1);
+       }
+
+       /// <summary>コンソール表示する</summary>
+       /// <param name=args>引数</param>
+       static void ConsoleOut(string args2)
+       {
+
+           Console.WriteLine(args2);
+       }
+
+   }
+
+}
+

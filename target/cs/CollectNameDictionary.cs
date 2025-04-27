@@ -20,7 +20,10 @@ public partial class TargetCs
             for(int i=0;i<sourcesLineList.Count;i++){
                 var sourceLines=sourcesLineList.ElementAt(i);
                 var nodeKind =sourceLines.nodeKind; 
-                var sourceLineString=sourceLines.lineStrings ?? "";   
+                var sourceLineString=sourceLines.lineStrings ?? "";  
+                Console.WriteLine($"i:{i}");
+                Console.WriteLine($"nodeKind:{nodeKind}");
+                Console.WriteLine($"sourceLineString:{sourceLineString}");
                 switch(nodeKind){
                     case NodeKind.ND_JDC_BEGIN://JavaDoc備考開始
                         //ソース行を先読みする
@@ -32,9 +35,20 @@ public partial class TargetCs
                             var sourceLinesforward=sourcesLineList.ElementAt(j);
                             var nodeKindforward =sourceLinesforward.nodeKind;
                             var sourceLineStringforward=sourceLinesforward.lineStrings ?? "";
+                            Console.WriteLine($"j:{j}");
+                            Console.WriteLine($"nodeKindforward:{nodeKindforward}");
+                            Console.WriteLine($"sourceLineStringforward:{sourceLineStringforward}");
                             if(nodeKindforward==NodeKind.ND_JDC_MIDLE && appearValue==false){
                                 appearValue=true;
                                 value=sourceLineStringforward.Replace(SourceLineNodeKind.JavDocComMidNote,"").Trim();
+                            }
+                            if(nodeKindforward==NodeKind.ND_JDC_PARAM){
+                                valueParam=sourceLineStringforward.Replace(SourceLineNodeKind.JavDocComMidNote,"").Trim();
+                                valueParam=valueParam.Replace(SourceLineNodeKind.JavDocComParmNote,"").Trim();
+                                var keyValue=valueParam.Split(" ");
+                                if(keyValue.Length==2){
+                                    nameDictionary.Add(keyValue[0],keyValue[1]);
+                                }
                             }
                             if(nodeKindforward==NodeKind.ND_DEF_BEGIN && appearValue){
                                 key=sourceLineStringforward.Replace("static","").Replace("public","").Replace("private","").Trim();
@@ -49,13 +63,14 @@ public partial class TargetCs
                                 nameDictionary.Add(key,value);
                                 break;//ND_DEF_BEGINで必ずbreak
                             }
-                            if(nodeKindforward==NodeKind.ND_JDC_PARAM){
-                                valueParam=sourceLineStringforward.Replace(SourceLineNodeKind.JavDocComMidNote,"").Trim();
-                                valueParam=valueParam.Replace(SourceLineNodeKind.JavDocComParmNote,"").Trim();
-                                var keyValue=valueParam.Split(" ");
-                                if(keyValue.Length==2){
-                                    nameDictionary.Add(keyValue[0],keyValue[1]);
+                            if(nodeKindforward==NodeKind.ND_STM_BEGIN && appearValue){
+                                key=sourceLineStringforward.Replace("static","").Replace("public","").Replace("private","").Trim();
+                                var pos=key.LastIndexOf(" ");
+                                if(pos>0){//空白が出現した場合
+                                    key=key.Substring(pos).Trim();//空白から右側を対象とする
                                 }
+                                nameDictionary.Add(key,value);
+                                break;//ND_STM_BEGINで必ずbreak
                             }
                         }
                         break;

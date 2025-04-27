@@ -1,0 +1,20 @@
+﻿using System;
+namespace HelloWorld
+{
+
+    /// <summary>プログラム型</summary>
+    public class Program
+    {
+
+        /// <summary>メイン</summary>
+        /// <param name=args>引数</param>
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("Hello World!");
+        }
+
+    }
+
+}
+
